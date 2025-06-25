@@ -1,5 +1,6 @@
 import pygame
 import pygame.mixer as mixer # importo pygame.mixer como mixer para poder usar sonidos más adelante.
+from texto import mostrar_texto
 
 def main():
     pygame.init() # Inicializando pygame
@@ -19,8 +20,10 @@ def main():
         # Actualizar el juego (por ahora nada)
 
         screen.fill((0,0,0)) # Se dibuja en la pantalla rellenandola de negro.
+        screen.blit(mostrar_texto(), (50, 50)) # Coloco el texto que indica la cantidad de fallos en las cordanas dadas.
         pygame.display.flip() # flip() actualiza el contenido de toda la pantalla.
         clock.tick(30) # Limita los fps a 30.
 
-if __name__ == "__main__":
-    main()
+
+
+main()
