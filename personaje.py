@@ -2,15 +2,17 @@ import pygame
 import assets
 # Diccionario del personaje
 pygame.mixer.init()  # Inicializa el mezclador de sonido
+assets.init()  # Inicializa los assets del juego, como imágenes y sonidos
+
 PERSONAJE = {
     "velocidad": 10,
     "ancho": 50,
     "alto": 50,
-    "imagen": assets.IMAGEN("personaje")  # Cargar imagen del personaje desde el diccionario de imágenes
+    "imagen": assets.IMAGEN["personaje"] # Carga la imagen del personaje desde el diccionario de imágenes
 }
 
-PERSONAJE["imagen"] = pygame.transform.scale(PERSONAJE["imagen"], (PERSONAJE["ancho"], PERSONAJE["alto"]))
-sonido_daño = assets.SONIDO("daño")  # Cargar sonido de daño desde el diccionario de sonidos
+PERSONAJE["imagen"] = pygame.transform.scale(PERSONAJE["imagen"], (PERSONAJE["ancho"], PERSONAJE["alto"])) # Escalar la imagen del personaje al tamaño definido
+sonido_daño = assets.SONIDO["error"]  # Cargar sonido de daño desde el diccionario de sonidos
 
 def crear_personaje(ancho_ventana, alto_ventana): # Crea un rectángulo que representa al personaje en la parte inferior de la ventana
     x = (ancho_ventana - PERSONAJE["ancho"]) // 2  # Posición inicial en el centro de la pantalla
