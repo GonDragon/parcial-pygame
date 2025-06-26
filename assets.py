@@ -7,7 +7,7 @@ SONIDO = {}
 
 def init():
     SONIDO["error"] = pygame.mixer.Sound(os.path.join(ASSETS_PATH,"sonidos", "error.wav")) # Cargo Sonido y lo guardo en el Dic
-
+    SONIDO["error"].set_volume(0.05) # Seteo el volumen del sonido de error a la mitad
     personaje = pygame.image.load(os.path.join(ASSETS_PATH, "img", "dvd-logo.png")) # Cargar imagen de personaje
     altura_maxima = 100 # Definir una altura máximo
     ancho, alto = personaje.get_size() # Capturo el tamaño de la imagen
